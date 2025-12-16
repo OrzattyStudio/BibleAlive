@@ -41,18 +41,6 @@ workflows:
       - app/build/outputs/**/*.apk
       - app/build/outputs/**/*.aab
       - app/build/outputs/**/mapping.txt
-      
-    publishing:
-      email:
-        recipients:
-          - user@example.com
-        notify:
-          success: true
-          failure: true
-      google_play:
-        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
-        track: internal
-        submit_as_draft: true
 
   debug-workflow:
     name: Bible Alive Debug Build
