@@ -1,0 +1,99 @@
+workflows:
+  android-workflow:
+    name: Bible Alive Android Build
+    max_build_duration: 60
+    instance_type: mac_mini_m1
+    
+    environment:
+      android_signing:
+        - bible_alive_keystore
+      groups:
+        - google_play
+      vars:
+        PACKAGE_NAME: "com.bible.alive"
+        GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4096m"
+      java: 17
+      
+    scripts:
+      - name: Set up local.properties
+        script: |
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
+          
+      - name: Set up key.properties
+        script: |
+          cat >> "$CM_BUILD_DIR/key.properties" <<EOF
+          storePassword=$CM_KEYSTORE_PASSWORD
+          keyPassword=$CM_KEY_PASSWORD
+          keyAlias=$CM_KEY_ALIAS
+          storeFile=$CM_KEYSTORE_PATH
+          EOF
+          
+      - name: Build Android release
+        script: |
+          chmod +x gradlew
+          ./gradlew clean assembleRelease
+          
+      - name: Build Android bundle
+        script: |
+          ./gradlew bundleRelease
+          
+    artifacts:
+      - app/build/outputs/**/*.apk
+      - app/build/outputs/**/*.aab
+      - app/build/outputs/**/mapping.txt
+      
+    publishing:
+      email:
+        recipients:
+          - user@example.com
+        notify:
+          success: true
+          failure: true
+      google_play:
+        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
+        track: internal
+        submit_as_draft: true
+
+  debug-workflow:
+    name: Bible Alive Debug Build
+    max_build_duration: 30
+    instance_type: mac_mini_m1
+    
+    environment:
+      vars:
+        GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4096m"
+      java: 17
+      
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: 'develop'
+          include: true
+          source: true
+          
+    scripts:
+      - name: Set up local.properties
+        script: |
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
+          
+      - name: Build debug APK
+        script: |
+          chmod +x gradlew
+          ./gradlew clean assembleDebug
+          
+      - name: Run unit tests
+        script: |
+          ./gradlew testDebugUnitTest
+          
+    artifacts:
+      - app/build/outputs/**/*.apk
+      - app/build/reports/**/*
+      
+    publishing:
+      email:
+        recipients:
+          - user@example.com
+        notify:
+          success: false
+          failure: true

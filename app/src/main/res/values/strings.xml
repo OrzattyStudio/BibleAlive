@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bible Alive</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">Inicio</string>
+    <string name="nav_read">Leer</string>
+    <string name="nav_profile">Perfil</string>
+    <string name="nav_settings">Ajustes</string>
+    
+    <!-- Onboarding -->
+    <string name="welcome_title">Bienvenido a Bible Alive</string>
+    <string name="welcome_subtitle">Tu compañero diario para estudiar la Palabra de Dios</string>
+    <string name="select_age_title">¿Cuál es tu rango de edad?</string>
+    <string name="age_young">Joven (13-25 años)</string>
+    <string name="age_adult">Adulto (26-55 años)</string>
+    <string name="age_elderly">Adulto mayor (56+ años)</string>
+    <string name="continue_btn">Continuar</string>
+    <string name="get_started">Comenzar</string>
+    
+    <!-- Home -->
+    <string name="verse_of_day">Versículo del Día</string>
+    <string name="daily_devotional">Devocional Diario</string>
+    <string name="continue_reading">Continuar Leyendo</string>
+    <string name="recommended_for_you">Recomendado para ti</string>
+    <string name="streak_days">días de racha</string>
+    <string name="points">puntos</string>
+    
+    <!-- Read -->
+    <string name="select_book">Seleccionar Libro</string>
+    <string name="select_chapter">Seleccionar Capítulo</string>
+    <string name="old_testament">Antiguo Testamento</string>
+    <string name="new_testament">Nuevo Testamento</string>
+    <string name="read_aloud">Leer en voz alta</string>
+    <string name="summary">Resumen</string>
+    <string name="meaning">Significado</string>
+    <string name="share">Compartir</string>
+    <string name="highlight">Resaltar</string>
+    <string name="add_note">Agregar nota</string>
+    
+    <!-- Profile -->
+    <string name="reading_stats">Estadísticas de Lectura</string>
+    <string name="verses_read">Versículos leídos</string>
+    <string name="chapters_completed">Capítulos completados</string>
+    <string name="current_streak">Racha actual</string>
+    <string name="best_streak">Mejor racha</string>
+    <string name="total_points">Puntos totales</string>
+    <string name="reading_history">Historial de lectura</string>
+    <string name="favorites">Favoritos</string>
+    <string name="notes">Notas</string>
+    <string name="highlights">Resaltados</string>
+    
+    <!-- Settings -->
+    <string name="appearance">Apariencia</string>
+    <string name="dark_mode">Modo oscuro</string>
+    <string name="font_size">Tamaño de fuente</string>
+    <string name="bible_version">Versión de la Biblia</string>
+    <string name="notifications">Notificaciones</string>
+    <string name="daily_verse_notification">Versículo diario</string>
+    <string name="streak_reminder">Recordatorio de racha</string>
+    <string name="reading_reminder">Recordatorio de lectura</string>
+    <string name="about">Acerca de</string>
+    <string name="version">Versión</string>
+    <string name="privacy_policy">Política de privacidad</string>
+    <string name="terms_of_service">Términos de servicio</string>
+    
+    <!-- Bible Versions -->
+    <string name="rv1960">Reina Valera 1960</string>
+    <string name="ntv">Nueva Traducción Viviente</string>
+    <string name="nvi">Nueva Versión Internacional</string>
+    
+    <!-- Notifications -->
+    <string name="notification_channel_verse">Versículo Diario</string>
+    <string name="notification_channel_streak">Racha de Lectura</string>
+    <string name="streak_warning_title">¡Tu racha está en riesgo!</string>
+    <string name="streak_warning_message">No has leído la Biblia hoy. Lee al menos 5 versículos para mantener tu racha de %d días.</string>
+    <string name="daily_verse_title">Versículo del día</string>
+    
+    <!-- Dialogs -->
+    <string name="loading">Cargando...</string>
+    <string name="error_loading">Error al cargar</string>
+    <string name="retry">Reintentar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="ok">Aceptar</string>
+    <string name="close">Cerrar</string>
+    
+    <!-- Age-specific language -->
+    <string name="greeting_young">¡Hola!</string>
+    <string name="greeting_adult">Buenos días</string>
+    <string name="greeting_elderly">Que Dios le bendiga</string>
+</resources>
